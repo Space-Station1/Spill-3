@@ -1,16 +1,16 @@
-# combat.py - Kamp gir nå XP
+# combat.py
 import random
 
-def start_kamp(spiller, fiende_navn):
-    print(f"\nDu møter en {fiende_navn}!")
+def start_kamp(spiller, enemy_name):
+    print(f"\nYou encounter a {enemy_name}!")
     
-    treff_sjanse = random.randint(1, 10)
+    hit_chance = random.randint(1, 10)
     
-    if treff_sjanse > 4:
-        print(f"Du beseiret {fiende_navn}!")
-        spiller.gain_xp(30) # Spilleren får 30 XP
+    if hit_chance > 4:
+        print(f"You defeated the {enemy_name}!")
+        spiller.gain_xp(30)
         return True
     else:
-        print(f"Du bommet på {fiende_navn} og fikk bank!")
+        print(f"You missed the {enemy_name} and took damage!")
         spiller.take_damage(15)
         return False
