@@ -1,22 +1,22 @@
-# main.py - Hovedmenyen
+# main.py
 from player import Player
 from combat import start_kamp
 
 def main():
-    print("--- NEURAL DRIFT: KAMPMODUS ---")
-    navn = input("Navn, merc: ")
-    spiller = Player(navn)
+    print("--- NEURAL DRIFT: COMBAT MODE ---")
+    name = input("Enter your name, Merc: ")
+    player = Player(name)
     
-    valg = input("Vil du [utforske] for å finne fiender? (ja/nei): ")
+    choice = input("Do you want to [explore] to find enemies? (yes/no): ")
     
-    if valg == "ja":
-        resultat = start_kamp(spiller, "Cyber-vakt")
-        if resultat:
-            print("Du vant kampen!")
+    if choice.lower() == "yes":
+        result = start_kamp(player, "Cyber-Guard")
+        if result:
+            print("Victory!")
         else:
-            print("Du overlevde så vidt...")
+            print("You barely survived...")
             
-    print(spiller.status())
+    print(player.status())
 
 if __name__ == "__main__":
     main()
