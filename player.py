@@ -1,4 +1,4 @@
-# player.py - Oppdatert med XP og Level
+# player.py
 class Player:
     def __init__(self, name):
         self.name = name
@@ -8,11 +8,11 @@ class Player:
         self.inventory = []
 
     def status(self):
-        return f"Navn: {self.name} | Lvl: {self.level} | XP: {self.xp} | Helse: {self.health}"
+        return f"Name: {self.name} | Level: {self.level} | XP: {self.xp} | Health: {self.health}"
 
     def gain_xp(self, amount):
         self.xp += amount
-        print(f"Du fikk {amount} XP!")
+        print(f"You gained {amount} XP!")
         if self.xp >= 50:
             self.level_up()
 
@@ -20,8 +20,8 @@ class Player:
         self.level += 1
         self.xp = 0
         self.health += 20
-        print(f"--- GRATULERER! Du har nådd level {self.level}! Helsen din økte til {self.health}. ---")
+        print(f"--- CONGRATULATIONS! You reached level {self.level}! Health increased to {self.health}. ---")
 
     def take_damage(self, amount):
         self.health -= amount
-        print(f"Du tok {amount} skade! Helse: {self.health}.")
+        print(f"You took {amount} damage! Health is now: {self.health}.")
